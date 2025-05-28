@@ -1,0 +1,36 @@
+@import './../../styles.scss';
+
+.start-screen {
+    background-color: #404040;
+    width: 100%;
+    height: 100vh;
+    @include dFlex($jc: center, $ai: center, $g: 0px);
+
+    >img {
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+.start-label-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    @include dFlex($jc: center, $ai: center, $g: 0px);
+
+    >a {
+        @include dFlex($jc: center, $ai: center, $g: 0px);
+        width: fit-content;
+
+        >img {
+            height: auto;
+            width: 100%;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(1.25);
+            }
+        }
+    }
+}
