@@ -4,11 +4,6 @@ import { Game } from '../../models/game';
 import { PlayerComponent } from "../player/player.component";
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 
@@ -20,10 +15,6 @@ import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player
     PlayerComponent,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule
   ],
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']

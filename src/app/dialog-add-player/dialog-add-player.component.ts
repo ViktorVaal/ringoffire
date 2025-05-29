@@ -3,12 +3,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-dialog-add-player',
   standalone: true,
   imports: [
     MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
     FormsModule,
     MatDialogModule
@@ -18,4 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 })
 export class DialogAddPlayerComponent {
   name: string = '';
+
+  onNoClick() {
+
+  }
 }
