@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { GameInfoComponent } from "../game-info/game-info.component";
 
 @Component({
   selector: 'app-game',
@@ -15,7 +16,8 @@ import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player
     PlayerComponent,
     MatButtonModule,
     MatIconModule,
-  ],
+    GameInfoComponent
+],
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
@@ -34,7 +36,6 @@ export class GameComponent {
   newGame() {
     this.game = new Game();
     console.log(this.game);
-
   }
 
   takeCard() {
@@ -52,8 +53,8 @@ export class GameComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((name: string) => {
+      this.game.players.push(name);
     });
   }
 }

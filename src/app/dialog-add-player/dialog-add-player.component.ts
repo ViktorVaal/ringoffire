@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { Game } from '../../models/game';
 
 
 @Component({
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './dialog-add-player.component.scss'
 })
 export class DialogAddPlayerComponent {
+  game!: Game;
   name: string = '';
 
   onNoClick() {
