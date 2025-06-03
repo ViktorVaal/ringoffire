@@ -1,4 +1,4 @@
 <mat-card>
-  <mat-card-header class="title">{{ card ? title : 'Add 2 players to start the game!!' }}</mat-card-header>
+  <mat-card-header  [ngStyle]="{ color: card ? 'black' : 'red' }" class="title">{{ card ? title : 'Add 2 players to start the game!!' }}</mat-card-header>
   <mat-card-content> {{ card ? description : 'After adding 2 players you can draw a card :)' }} </mat-card-content>
 </mat-card>

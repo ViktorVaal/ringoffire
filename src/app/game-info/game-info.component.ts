@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
@@ -5,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-game-info',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, CommonModule],
   templateUrl: './game-info.component.html',
   styleUrl: './game-info.component.scss'
 })
