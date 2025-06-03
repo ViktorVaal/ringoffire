@@ -17,7 +17,7 @@ import { GameInfoComponent } from "../game-info/game-info.component";
     MatButtonModule,
     MatIconModule,
     GameInfoComponent
-],
+  ],
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
@@ -46,9 +46,9 @@ export class GameComponent {
       this.game.currentPlayer++;
       this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       setTimeout(() => {
-        this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
-      }, 1250);
+        this.game.playedCards.push(this.currentCard);
+      }, 1200);
     }
   }
 
@@ -56,7 +56,9 @@ export class GameComponent {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      this.game.players.push(name);
+      if (name && name.length > 0) {
+        this.game.players.push(name);
+      }
     });
   }
 }

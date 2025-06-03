@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { Game } from '../../models/game';
 
@@ -20,11 +20,17 @@ import { Game } from '../../models/game';
   templateUrl: './dialog-add-player.component.html',
   styleUrl: './dialog-add-player.component.scss'
 })
+
+
 export class DialogAddPlayerComponent {
   game!: Game;
   name: string = '';
 
-  onNoClick() {
+  constructor(public dialogRef: MatDialogRef<DialogAddPlayerComponent>) {
 
+  }
+
+  onNoClick() {
+    this.dialogRef.close();
   }
 }
