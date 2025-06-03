@@ -11,18 +11,18 @@
     <div class="card-stack">
         <!-- Card stack -->
         @for (card of [0, 1, 2, 3]; track $index) {
-        <img [ngStyle]="{'right.px': $index * 5}" src="./../../assets/img/cards/blue_back.png" alt="">
+        <img [ngStyle]="{'right.px': $index * 5}" src="assets/img/cards_old/card_cover.png" alt="">
         }
-        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="./../../assets/img/cards_old/card_cover.png"
+        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="assets/img/cards_old/card_cover.png"
             alt="">
 
         <!-- Stack for played cards -->
         @for (card of game.playedCards; track $index) {
-        <img class="played-card " src="./../../assets/img/cards_old/{{ card }}.png" alt="">
+        <img class="played-card " src="assets/img/cards_old/{{ card }}.png" alt="">
         }
         <!-- current card (Animation) -->
         <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;"
-            src="./../../assets/img/cards_old/{{ currentCard }}.png" alt="">
+            src="assets/img/cards_old/{{ currentCard }}.png" alt="">
     </div>
 </div>
 

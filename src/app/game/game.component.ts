@@ -35,11 +35,10 @@ export class GameComponent {
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation && this.game.players.length >= 2) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
 
