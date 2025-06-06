@@ -1,5 +1,5 @@
 
-
+<ng-container *ngIf="game">
 @for (player of game.players; track $index;) {
 <app-player [ngStyle]="{'top.px': 100 + $index * 90}" [playerActive]="$index == game.currentPlayer" [name]="player" class="player-position"></app-player>
 }
@@ -21,12 +21,13 @@
         <img class="played-card " src="assets/img/cards_old/{{ card }}.png" alt="">
         }
         <!-- current card (Animation) -->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;"
-            src="assets/img/cards_old/{{ currentCard }}.png" alt="">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px;"
+            src="assets/img/cards_old/{{ game.currentCard }}.png" alt="">
     </div>
 </div>
 
-<app-game-info [card]="currentCard" class="pin-bottom"></app-game-info>
+<app-game-info [card]="game.currentCard" class="pin-bottom"></app-game-info>
+</ng-container>
 
 <button (click)="openDialog()" mat-fab color="primary" class="btn-add">
     <mat-icon>add</mat-icon>

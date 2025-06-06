@@ -4,7 +4,7 @@
     width: 300px;
     @include dFlex($jc: flex-start, $g: 8px);
     font-size: 20px;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.6);
     border-radius: 50px 0 0 50px;
     span {
         font-size: 32px;
@@ -18,5 +18,5 @@
 }
 
 .player-active {
-    background-color: orange !important;
+    background-color: rgba(255, 166, 0, 0.8) !important;
 }

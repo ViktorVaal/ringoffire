@@ -19,18 +19,15 @@
     bottom: 150px;
     @include dFlex($jc: center, $ai: center, $g: 0px);
 
-    >a {
+
+    >img {
         @include dFlex($jc: center, $ai: center, $g: 0px);
-        width: fit-content;
+        width: 50%;
+        height: auto;
+        cursor: pointer;
 
-        >img {
-            height: auto;
-            width: 100%;
-            cursor: pointer;
-
-            &:hover {
-                filter: brightness(1.25);
-            }
+        &:hover {
+            filter: brightness(1.25);
         }
     }
 }
